@@ -1073,11 +1073,13 @@ document.addEventListener('DOMContentLoaded', function(){
             this.setState({
                 result: <Creator/>
             })
+            console.log('m')
         }
         handleCheat2 = () => {
             this.setState({
                 result: <Main/>
             })
+            console.log('c')
         }
         render() {
             return (

@@ -27,7 +27,8 @@ document.addEventListener('DOMContentLoaded', function(){
             let slides = document.querySelectorAll('.mySlides');
             console.log(result)
             let setSlide = () => slides[this.state.slides].style.display = 'block'
-            testPlanet.style.backgroundImage = bg[result]
+            testPlanet.style.backgroundImage = bg[result];
+            testPlanet.style.border = '1px solid transparent';
             if (result > 2) {
                 this.setState ({
                     slides: 0
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 slides[i].style.display = 'none'
             }
             slides[e.target.value].style.display = 'block';
+            testPlanet.style.border = '1px solid transparent';
             if (e.target.value == 0) {
                 testPlanet.style.backgroundImage = 'url("images/viking.png")'
             } else if (e.target.value == 1) {
@@ -179,7 +181,8 @@ document.addEventListener('DOMContentLoaded', function(){
             let slides = document.querySelectorAll('.mySlides');
             console.log(result)
             let setSlide = () => slides[this.state.slides].style.display = 'block'
-            testPlanet.style.backgroundImage = bg[result]
+            testPlanet.style.backgroundImage = bg[result];
+            testPlanet.style.border = '1px solid transparent';
             if (result > 2) {
                 this.setState ({
                     slides: 0
@@ -214,6 +217,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 slides[i].style.display = 'none'
             }
             slides[e.target.value].style.display = 'block';
+            testPlanet.style.border = '1px solid transparent';
             if (e.target.value == 0) {
                 testPlanet.style.backgroundImage = 'url("images/viking.png")'
             } else if (e.target.value == 1) {
@@ -332,7 +336,8 @@ document.addEventListener('DOMContentLoaded', function(){
             let slides = document.querySelectorAll('.mySlides');
             console.log(result)
             let setSlide = () => slides[this.state.slides].style.display = 'block'
-            testPlanet.style.backgroundImage = bg[result]
+            testPlanet.style.backgroundImage = bg[result];
+            testPlanet.style.border = '1px solid transparent';
             if (result > 2) {
                 this.setState ({
                     slides: 0
@@ -369,6 +374,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 slides[i].style.display = 'none'
             }
             slides[e.target.value].style.display = 'block';
+            testPlanet.style.border = '1px solid transparent';
             if (e.target.value == 0) {
                 testPlanet.style.backgroundImage = 'url("images/viking.png")'
             } else if (e.target.value == 1) {
@@ -478,7 +484,8 @@ document.addEventListener('DOMContentLoaded', function(){
             let slides = document.querySelectorAll('.mySlides');
             console.log(result)
             let setSlide = () => slides[this.state.slides].style.display = 'block'
-            testPlanet.style.backgroundImage = bg[result]
+            testPlanet.style.backgroundImage = bg[result];
+            testPlanet.style.border = '1px solid transparent';
             if (result > 2) {
                 this.setState ({
                     slides: 0
@@ -508,6 +515,7 @@ document.addEventListener('DOMContentLoaded', function(){
                 slides[i].style.display = 'none'
             }
             slides[e.target.value].style.display = 'block';
+            testPlanet.style.border = '1px solid transparent';
             if (e.target.value == 0) {
                 testPlanet.style.backgroundImage = 'url("images/viking.png")'
             } else if (e.target.value == 1) {
@@ -701,25 +709,26 @@ document.addEventListener('DOMContentLoaded', function(){
         handleAnimation = () => {
             let allOrbits = document.querySelectorAll('.orbit-first, .orbit-second, .orbit-third, .orbit-fourth, .orbit-fifth, .orbit-sixth, .orbit-seventh, .orbit-eighth');
             let allPlanets = document.querySelectorAll('.mercury, .venus, .earth, .mars, .jupiter, .saturn, .uranus, .neptune');
-            if (allOrbits[0].style.animationPlayState === 'running') {
-                for (let i = 0; i < allOrbits.length; i++) {
-                    allOrbits[i].style.animationPlayState = 'paused';
-                    allPlanets[i].style.animationPlayState = 'paused'
-                }
-            } else {
+            if (allOrbits[0].style.animationPlayState === 'paused') {
                 for (let i = 0; i < allOrbits.length; i++) {
                     allOrbits[i].style.animationPlayState = 'running';
                     allPlanets[i].style.animationPlayState = 'running'
+                }
+            } else {
+                for (let i = 0; i < allOrbits.length; i++) {
+                    allOrbits[i].style.animationPlayState = 'paused';
+                    allPlanets[i].style.animationPlayState = 'paused'
                 }
             }
         }
         handleOrbitControl = () => {
             let allOrbits = document.querySelectorAll('.orbit-first, .orbit-second, .orbit-third, .orbit-fourth, .orbit-fifth, .orbit-sixth, .orbit-seventh, .orbit-eighth');
-            if (allOrbits[0].style.border === "1px solid white") {
+            if (allOrbits[0].style.border === "1px solid white" || allOrbits[0].style.border == '') {
                 for (let i = 0; i < allOrbits.length; i++) {
                     allOrbits[i].style.border = "1px solid transparent"
                 }
             } else {
+
                 for (let i = 0; i < allOrbits.length; i++) {
                     allOrbits[i].style.border = "1px solid white"
                 }

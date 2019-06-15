@@ -231,6 +231,7 @@ document.addEventListener('DOMContentLoaded', function(){
             this.setState({
                 firstPlanetDistance: e.target.value
             })
+            console.log(e.target.value);
             let orbitFirst = document.querySelector('.constructor-orbit-first');
             let orbitSecond = document.querySelector('.constructor-orbit-second');
             let orbitThird = document.querySelector('.constructor-orbit-third');
@@ -243,6 +244,10 @@ document.addEventListener('DOMContentLoaded', function(){
             allOrbits[i].style.left = "calc(45% - " + (e.target.value / 2) + "px)";
             allOrbits[i].style.top = "calc(50% - " + (e.target.value / 2) + "px)";
 
+            this.setState({
+                sliderValue: e.target.value
+            })
+
             for (let i = 0; i < allOrbits.length -1; i++) {
                 if (parseInt(allOrbits[i + 1].offsetWidth) - parseInt(allOrbits[i].offsetWidth) < 74) {
                     allOrbits[i + 1].style.width = allOrbits[i].offsetWidth + 74 + 'px';
@@ -251,15 +256,7 @@ document.addEventListener('DOMContentLoaded', function(){
                     allOrbits[i + 1].style.top = 'calc(50% - ' + allOrbits[i + 1].offsetWidth / 2 + 'px)';
                 }
             }
-            for (let i = allOrbits.length -1; i > 0; i--) {
-                if (parseInt(allOrbits[i].offsetWidth) - parseInt(allOrbits[i-1].offsetWidth) <74) {
-                    console.log('dziala minus')
-                    allOrbits[i-1].style.width = allOrbits[i].offsetWidth - 74 + 'px';
-                    allOrbits[i-1].style.height = allOrbits[i].offsetHeight - 74 + 'px';
-                    allOrbits[i-1].style.left = 'calc(45% - ' + allOrbits[i-1].offsetWidth / 2 + 'px'
-                    allOrbits[i-1].style.top = 'calc(50% - ' + allOrbits[i-1].offsetWidth / 2 + 'px'
-                }
-            }
+
         }
         handleFirstOrbitDuration = (e) => {
             let orbit = document.querySelector('.constructor-orbit-third');
@@ -399,6 +396,10 @@ document.addEventListener('DOMContentLoaded', function(){
             allOrbits[i].style.position = "absolute";
             allOrbits[i].style.left = "calc(45% - " + (e.target.value / 2) + "px)";
             allOrbits[i].style.top = "calc(50% - " + (e.target.value / 2) + "px)";
+
+            this.setState({
+                sliderValue: e.target.value
+            })
 
             for (let i = 0; i < allOrbits.length -1; i++) {
                 if (parseInt(allOrbits[i + 1].offsetWidth) - parseInt(allOrbits[i].offsetWidth) < 74) {
@@ -547,6 +548,10 @@ document.addEventListener('DOMContentLoaded', function(){
             allOrbits[i].style.position = "absolute";
             allOrbits[i].style.left = "calc(45% - " + (e.target.value / 2) + "px)";
             allOrbits[i].style.top = "calc(50% - " + (e.target.value / 2) + "px)";
+
+            this.setState({
+                sliderValue: e.target.value
+            })
 
             for (let i = 0; i < allOrbits.length -1; i++) {
                 if (parseInt(allOrbits[i + 1].offsetWidth) - parseInt(allOrbits[i].offsetWidth) < 74) {
